@@ -30,12 +30,13 @@ function Calculator (id, elementId, options){
        var fnBtns = this.model.functionBtns;
        var fnBtnArray = [];
        for(var i = 0; i<fnBtns.length;i++){
-        fnBtnArray.push(new Button('fnBtn'+fnBtns[i],{title:fnBtns[i],value:fnBtns[i],className:'btn btn-danger function'}).getWidget())
+        var btn = new Button('fnBtn'+fnBtns[i],{title:fnBtns[i],value:fnBtns[i],className:'btn btn-danger function'}).getWidget()
+         fnBtnArray.push(btn);
        }
        this.view.setNumberButtons(fnBtnArray);
-       this.setEvents(fnBtnArray)
+    
 
-           /**
+        /**
         * operation buttons
         */
 
@@ -45,7 +46,7 @@ function Calculator (id, elementId, options){
             opBtnArray.push(new Button('opBtn'+opBtns[i],{title:opBtns[i],value:opBtns[i],className:'btn btn-warning operations'}).getWidget()) 
            }
            this.view.setOpButtons(opBtnArray);
-           this.setEvents(opBtnArray)
+     
         
        /**
         * number buttons
@@ -58,15 +59,10 @@ function Calculator (id, elementId, options){
        
     }
        this.view.setNumberButtons(nuBtnArray)
-       this.setEvents(nuBtnArray)
+     
 
     }
 
-    this.setEvents = function(array){
-        for(var i = 0; i < array.length; i++){       
-           this.onBtnPress(array[i]);
-        }
-    }
 
 
     this.onBtnPress = function(element){

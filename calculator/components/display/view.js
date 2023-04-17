@@ -20,7 +20,6 @@ function  DisplayView(id,options){
         this.widgetElement.setAttribute('class', this.options.className);
         this.widgetElement.disabled = true;
         this.widgetElement.value = 0;
-        
     }
 
     /**

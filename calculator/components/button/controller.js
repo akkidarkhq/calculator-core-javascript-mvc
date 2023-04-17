@@ -19,14 +19,14 @@ function Button (id, options){
         }  
     } 
 
-
     /**
      * 
      */
     this.onBtnPress = function(id){
-         console.log(this.options.value)
+         console.log(" i have pressed "+id)
     }
 
+   
      /**
      * 
      * @returns widget element
@@ -37,4 +37,3 @@ function Button (id, options){
 
     this.init(id, options)
 }
- 
